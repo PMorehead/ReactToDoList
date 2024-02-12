@@ -127,7 +127,7 @@ class ToDoList extends React.Component {
                 <div className="row">
                     <div className="col-12">
                         <h2 className="mb-3">To Do List</h2>
-                        {tasks.length > 0 ? tasks.map((task) => {
+                        {tasks.length > 0 ? tasks.filter((task) => {
                             if (filter === 'all') {
                                 return true;
                             } else if (filter === 'active') {
@@ -144,6 +144,9 @@ class ToDoList extends React.Component {
                             <label>
                                 <input type="checkbox" name="all" checked={filter === "all"} onChange={this.toggleFilter} /> All
                             </label>
+                            <lable>
+                                <input type="checkbox" name="active" checked={filter === "active"} onChange={this.toggleFilter} /> Active
+                            </lable>
                             <label>
                                 <input type="checkbox" name="completed" checked={filter === "completed"} onChange={this.toggleFilter} /> Completed
                             </label>
