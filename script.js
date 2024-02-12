@@ -15,7 +15,7 @@ class Task extends React.Component {
         return (
             <div className="row mb-1">
                 <p className="col">{content}</p>
-                <button onClick={() => onDelete(id)}>Delete</button>
+                <button className="btn btn-danger" onClick={() => onDelete(id)}>Delete</button>
                 <input className="d-inline-block mt-2" type="checkbox" onChange={() => onComplete(id, completed)} checked={completed} />
             </div>
         )
